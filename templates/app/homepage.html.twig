@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block body %}
+
+{% if recipeList|length %}
+    <ul class='list unstyled'>
+        {% for recipe in recipeList %}
+            <li>{{recipe.name}}</li>
+        {% endfor %}
+    <ul>
+{% else %}
+    <p class='text-info'>No Recipes Found!</p>
+{% endif %}
+{% endblock %}
